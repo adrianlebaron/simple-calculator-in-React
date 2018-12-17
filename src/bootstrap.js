@@ -16,7 +16,14 @@ function main() {
   ReactDOM.render(
     <Provider store={createStoreWithMiddleware(reducers)}>
       <BrowserRouter>
-        <App />
+        <div>
+          <div className="nav-bar">
+            <Link to="/">HOME</Link>
+            <Link to="/drywall">Drywall</Link>
+          </div>
+          <Route exact path="/" component={App} />
+          <Route path="drywall" component={ApiFetch} />
+        </div>
       </BrowserRouter>
     </Provider>
     , document.querySelector('.app-wrapper'));
